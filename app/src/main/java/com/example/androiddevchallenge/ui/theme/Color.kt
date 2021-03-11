@@ -15,6 +15,7 @@
  */
 package com.example.androiddevchallenge.ui.theme
 
+import androidx.compose.material.Colors
 import androidx.compose.ui.graphics.Color
 
 val purple200 = Color(0xFFBB86FC)
