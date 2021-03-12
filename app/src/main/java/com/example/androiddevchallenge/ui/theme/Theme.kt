@@ -27,7 +27,7 @@ fun CountDownTheme(content: @Composable() () -> Unit) {
         colors = darkColors(
             primary = textColor,
             primaryVariant = btnColor,
-            secondary = Color.White,
+            secondary = tipsColor,
             background = bgColorCenter
         ),
         typography = typography,

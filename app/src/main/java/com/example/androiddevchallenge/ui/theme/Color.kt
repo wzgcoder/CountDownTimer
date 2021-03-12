@@ -15,7 +15,6 @@
  */
 package com.example.androiddevchallenge.ui.theme
 
-import androidx.compose.material.Colors
 import androidx.compose.ui.graphics.Color
 
 val purple200 = Color(0xFFBB86FC)
@@ -26,3 +25,4 @@ val teal200 = Color(0xFF03DAC5)
 val bgColorCenter = Color(0xFF313A57)
 val textColor = Color(0xFF5BC9B0)
 val btnColor = Color(0xFF5673C2)
+val tipsColor = Color(0xFF8E9099)
