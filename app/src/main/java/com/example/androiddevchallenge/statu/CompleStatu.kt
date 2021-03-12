@@ -10,9 +10,10 @@ import com.example.androiddevchallenge.R
  * @date 2021/3/12 3:19 下午
  */
 class CompleStatu(var viewModel: CountDownViewModel) : IStatu {
-    override fun getProgress(): Float  = 0f
+    override fun getProgress(): Float = 0f
 
     override fun startButtonResId(): Int = R.drawable.ic_start
+
     override fun startButtonEnabled() = false
 
     override fun resetButtonEnabled() = false

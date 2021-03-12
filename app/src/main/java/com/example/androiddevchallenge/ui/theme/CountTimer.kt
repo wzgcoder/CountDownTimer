@@ -22,20 +22,18 @@ class CountTimer(var viewModel: CountDownViewModel) {
                 interpolator = LinearInterpolator()
                 duration = viewModel.totalTime * 1000L
                 addUpdateListener {
-                    Log.d("wzg", "倒计时:----" + it.animatedValue)
                     viewModel.remainingTime = (it.animatedValue as Int).toLong()
                 }
-                addListener {
-                    doOnEnd {
-                        complete()
-                    }
+
+                doOnEnd {
+                    complete()
                 }
+
             }
         } else {
             valueAnimator?.cancel()
             valueAnimator?.setIntValues(viewModel.totalTime.toInt(), 0)
             valueAnimator?.duration = viewModel.totalTime * 1000L
-            Log.d("wzg", "重新设置值:----" + viewModel.totalTime.toInt())
         }
     }
 
