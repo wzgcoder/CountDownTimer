@@ -1,6 +1,9 @@
 package com.example.androiddevchallenge
 
 import android.app.TimePickerDialog
+import android.content.Context
+import android.media.RingtoneManager
+import android.net.Uri
 import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
@@ -24,6 +27,7 @@ import androidx.compose.ui.tooling.preview.PreviewParameterProvider
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.constraintlayout.compose.ConstraintLayout
+import com.example.androiddevchallenge.statu.CompleStatu
 import com.example.androiddevchallenge.statu.formatTime
 
 /**
@@ -39,13 +43,14 @@ class CountDownProvider : PreviewParameterProvider<CountDownViewModel> {
         resetTime(10)
     }
     override val values: Sequence<CountDownViewModel> = listOf(countDownViewModel).asSequence()
-
-
 }
 
 @PreviewParameter(CountDownProvider::class)
 @Composable
 fun CountDown(viewModel: CountDownViewModel) {
+    if (viewModel.statu is CompleStatu){
+        sendSound(LocalContext.current)
+    }
 
     ConstraintLayout(
         Modifier
@@ -232,4 +237,11 @@ fun ProgressView(progress: Float) {
             style = stroke
         )
     })
+}
+
+private fun sendSound(context :Context){
+    val mUri: Uri =
+        RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION) //获取系统默认的notification提示音,Uri:通用资源标志符
+    val mRingtone = RingtoneManager.getRingtone(context, mUri)
+    mRingtone.play()
 }

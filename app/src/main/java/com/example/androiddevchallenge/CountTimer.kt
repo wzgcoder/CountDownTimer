@@ -1,12 +1,15 @@
-package com.example.androiddevchallenge.ui.theme
+package com.example.androiddevchallenge
 
 import android.animation.ValueAnimator
-import android.util.Log
 import android.view.animation.LinearInterpolator
-import androidx.core.animation.addListener
 import androidx.core.animation.doOnEnd
-import com.example.androiddevchallenge.CountDownViewModel
 import com.example.androiddevchallenge.statu.*
+import android.media.RingtoneManager
+
+import android.media.Ringtone
+import android.net.Uri
+import androidx.lifecycle.viewModelScope
+
 
 /**
  * describe Java类作用描述.
@@ -75,5 +78,7 @@ class CountTimer(var viewModel: CountDownViewModel) {
         viewModel.statu = ReadyStatu(viewModel)
         viewModel.resetTime(totalTime)
     }
+
+
 
 }

@@ -6,7 +6,6 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import com.example.androiddevchallenge.statu.IStatu
 import com.example.androiddevchallenge.statu.InitStatu
-import com.example.androiddevchallenge.ui.theme.CountTimer
 
 
 /**
